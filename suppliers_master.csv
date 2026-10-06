@@ -1,0 +1,16 @@
+supplier_id,supplier_name,supplier_location,average_lead_time_days,minimum_order_quantity,reliability_score
+SUP001,Capital MedLine Distributors,Delhi,2,10,0.97
+SUP002,Millennium Pharma Traders,"Gurugram, Haryana",2,12,0.96
+SUP003,Sarthak Healthcare Supplies,"Faridabad, Haryana",3,15,0.94
+SUP004,Panipat Wholesale Drugs Co.,"Panipat, Haryana",3,10,0.95
+SUP005,Himalaya Medico Agencies,Chandigarh,4,20,0.93
+SUP006,Punjab Pharma Distribution,"Ludhiana, Punjab",5,20,0.91
+SUP007,Rajputana Drug House,"Jaipur, Rajasthan",5,25,0.92
+SUP008,Awadh Life Sciences Traders,"Lucknow, Uttar Pradesh",6,25,0.89
+SUP009,Gujarat Medi-Link Pvt Ltd,"Ahmedabad, Gujarat",7,30,0.88
+SUP010,Konkan Pharma Wholesale,"Mumbai, Maharashtra",8,36,0.86
+SUP011,Deccan Healthcare Distributors,"Pune, Maharashtra",9,40,0.85
+SUP012,Charminar Medical Supplies,"Hyderabad, Telangana",10,40,0.84
+SUP013,Garden City Pharma Hub,"Bengaluru, Karnataka",12,48,0.82
+SUP014,Coromandel Drug Agencies,"Chennai, Tamil Nadu",13,50,0.8
+SUP015,Eastern Pharma Logistics,"Kolkata, West Bengal",14,60,0.77

@@ -1,0 +1,86 @@
+medicine_id,medicine_code,medicine_name,generic_name,category,dosage_form,strength,manufacturer,supplier_id,unit_cost,selling_price,demand_tier,reorder_level,safety_stock
+1,MED-ANL-001,Diclofenac Sodium 50 mg Tablet,Diclofenac Sodium,Analgesics,Tablet,50 mg,Aarogya Formulations,SUP011,14.0,18.74,Medium,454,94
+2,MED-ANL-002,Ibuprofen 400 mg Tablet,Ibuprofen,Analgesics,Tablet,400 mg,Sunrise Pharmacare,SUP003,16.0,22.26,High,378,80
+3,MED-ANL-003,Naproxen 250 mg Tablet,Naproxen,Analgesics,Tablet,250 mg,Trishul Drugs & Chemicals,SUP005,22.0,29.32,Medium,109,27
+4,MED-ANL-004,Aceclofenac 100 mg Tablet,Aceclofenac,Analgesics,Tablet,100 mg,Prakash Generics Pvt Ltd,SUP014,24.0,28.03,Medium,488,76
+5,MED-ANL-005,Tramadol Hydrochloride 50 mg Capsule,Tramadol Hydrochloride,Analgesics,Capsule,50 mg,Prakash Generics Pvt Ltd,SUP004,38.0,48.11,Low,17,3
+6,MED-ANL-006,Etoricoxib 90 mg Tablet,Etoricoxib,Analgesics,Tablet,90 mg,Orion Healthcare Ltd,SUP013,58.0,80.18,Low,73,29
+7,MED-ANL-007,Aspirin 75 mg Tablet,Aspirin,Analgesics,Tablet,75 mg,Orion Healthcare Ltd,SUP008,8.0,10.5,Medium,339,84
+8,MED-ANL-008,Diclofenac Diethylamine 1% w/w 30 g Gel,Diclofenac Diethylamine,Analgesics,Gel,1% w/w 30 g,Trishul Drugs & Chemicals,SUP001,62.0,80.07,Medium,116,41
+9,MED-APY-001,Paracetamol 500 mg Tablet,Paracetamol,Antipyretics,Tablet,500 mg,Meridian Labs India,SUP005,9.0,10.54,High,380,74
+10,MED-APY-002,Paracetamol 650 mg Tablet,Paracetamol,Antipyretics,Tablet,650 mg,Sunrise Pharmacare,SUP003,12.0,16.49,High,390,101
+11,MED-APY-003,Paracetamol 125 mg/5 ml Syrup,Paracetamol,Antipyretics,Syrup,125 mg/5 ml,Astra Vitae Laboratories,SUP002,28.0,33.76,Medium,106,38
+12,MED-APY-004,Mefenamic Acid 250 mg Tablet,Mefenamic Acid,Antipyretics,Tablet,250 mg,Orion Healthcare Ltd,SUP008,15.0,20.81,Medium,301,42
+13,MED-ABX-001,Amoxicillin 500 mg Capsule,Amoxicillin,Antibiotics,Capsule,500 mg,Astra Vitae Laboratories,SUP004,42.0,56.32,High,524,136
+14,MED-ABX-002,Amoxicillin + Clavulanic Acid 625 mg Tablet,Amoxicillin + Clavulanic Acid,Antibiotics,Tablet,625 mg,Prakash Generics Pvt Ltd,SUP008,118.0,153.1,High,875,163
+15,MED-ABX-003,Azithromycin 500 mg Tablet,Azithromycin,Antibiotics,Tablet,500 mg,Lifeline Pharma Works,SUP015,62.0,81.18,Medium,346,77
+16,MED-ABX-004,Ciprofloxacin 500 mg Tablet,Ciprofloxacin,Antibiotics,Tablet,500 mg,Ravikiran Lifesciences,SUP010,28.0,37.98,Medium,343,67
+17,MED-ABX-005,Cefixime 200 mg Tablet,Cefixime,Antibiotics,Tablet,200 mg,Orion Healthcare Ltd,SUP001,68.0,93.67,Medium,77,26
+18,MED-ABX-006,Doxycycline 100 mg Capsule,Doxycycline,Antibiotics,Capsule,100 mg,Orion Healthcare Ltd,SUP006,36.0,43.4,Medium,130,49
+19,MED-ABX-007,Metronidazole 400 mg Tablet,Metronidazole,Antibiotics,Tablet,400 mg,Orion Healthcare Ltd,SUP005,12.0,15.44,Medium,189,31
+20,MED-ABX-008,Cefuroxime 500 mg Tablet,Cefuroxime,Antibiotics,Tablet,500 mg,Trishul Drugs & Chemicals,SUP002,145.0,201.76,Low,13,7
+21,MED-ABX-009,Levofloxacin 500 mg Tablet,Levofloxacin,Antibiotics,Tablet,500 mg,Ravikiran Lifesciences,SUP015,72.0,99.1,Low,76,19
+22,MED-ABX-010,Cephalexin 500 mg Capsule,Cephalexin,Antibiotics,Capsule,500 mg,Ravikiran Lifesciences,SUP009,54.0,65.2,Low,29,11
+23,MED-AHS-001,Cetirizine 10 mg Tablet,Cetirizine,Antihistamines,Tablet,10 mg,Sunrise Pharmacare,SUP002,6.0,7.27,High,286,33
+24,MED-AHS-002,Levocetirizine 5 mg Tablet,Levocetirizine,Antihistamines,Tablet,5 mg,Bharat Medicare Ltd,SUP009,9.0,11.96,High,633,106
+25,MED-AHS-003,Fexofenadine 120 mg Tablet,Fexofenadine,Antihistamines,Tablet,120 mg,Zenvia Pharmaceuticals,SUP003,42.0,53.26,Medium,136,40
+26,MED-AHS-004,Loratadine 10 mg Tablet,Loratadine,Antihistamines,Tablet,10 mg,Orion Healthcare Ltd,SUP005,18.0,22.61,Medium,198,49
+27,MED-AHS-005,Chlorpheniramine Maleate 4 mg Tablet,Chlorpheniramine Maleate,Antihistamines,Tablet,4 mg,Orion Healthcare Ltd,SUP010,3.0,3.85,Medium,570,132
+28,MED-AHS-006,Desloratadine 5 mg Tablet,Desloratadine,Antihistamines,Tablet,5 mg,Veda Biotech Pvt Ltd,SUP005,28.0,34.64,Low,19,8
+29,MED-RSP-001,Salbutamol 100 mcg Inhaler,Salbutamol,Respiratory,Inhaler,100 mcg,Astra Vitae Laboratories,SUP004,85.0,98.51,Medium,69,13
+30,MED-RSP-002,Montelukast 10 mg Tablet,Montelukast,Respiratory,Tablet,10 mg,Orion Healthcare Ltd,SUP001,68.0,87.28,High,411,159
+31,MED-RSP-003,Budesonide 200 mcg Inhaler,Budesonide,Respiratory,Inhaler,200 mcg,Ravikiran Lifesciences,SUP001,210.0,238.36,Low,27,12
+32,MED-RSP-004,Ambroxol 30 mg/5 ml Syrup,Ambroxol,Respiratory,Syrup,30 mg/5 ml,Trishul Drugs & Chemicals,SUP012,55.0,63.6,Medium,520,46
+33,MED-RSP-005,Dextromethorphan 10 mg/5 ml Syrup,Dextromethorphan,Respiratory,Syrup,10 mg/5 ml,Bharat Medicare Ltd,SUP009,62.0,74.19,High,1142,127
+34,MED-RSP-006,Theophylline 200 mg SR Tablet,Theophylline,Respiratory,Tablet,200 mg SR,Bharat Medicare Ltd,SUP013,22.0,24.92,Low,79,13
+35,MED-RSP-007,Bromhexine 8 mg Tablet,Bromhexine,Respiratory,Tablet,8 mg,Ravikiran Lifesciences,SUP014,9.0,11.95,Medium,773,141
+36,MED-RSP-008,Acetylcysteine 600 mg Effervescent Tablet,Acetylcysteine,Respiratory,Effervescent Tablet,600 mg,Prakash Generics Pvt Ltd,SUP015,96.0,116.4,Low,51,14
+37,MED-GIT-001,Pantoprazole 40 mg Tablet,Pantoprazole,Gastrointestinal,Tablet,40 mg,Orion Healthcare Ltd,SUP004,20.0,24.95,High,298,66
+38,MED-GIT-002,Omeprazole 20 mg Capsule,Omeprazole,Gastrointestinal,Capsule,20 mg,Meridian Labs India,SUP007,14.0,16.95,High,402,50
+39,MED-GIT-003,Rabeprazole 20 mg Tablet,Rabeprazole,Gastrointestinal,Tablet,20 mg,Prakash Generics Pvt Ltd,SUP003,24.0,28.8,Medium,142,61
+40,MED-GIT-004,Famotidine 20 mg Tablet,Famotidine,Gastrointestinal,Tablet,20 mg,Zenvia Pharmaceuticals,SUP006,10.0,13.89,Medium,258,86
+41,MED-GIT-005,Domperidone 10 mg Tablet,Domperidone,Gastrointestinal,Tablet,10 mg,Nutan Remedies Ltd,SUP006,8.0,10.56,Medium,100,8
+42,MED-GIT-006,Ondansetron 4 mg Tablet,Ondansetron,Gastrointestinal,Tablet,4 mg,Ravikiran Lifesciences,SUP001,18.0,23.75,Medium,135,52
+43,MED-GIT-007,Oral Rehydration Salts 21.8 g Powder Sachet,Oral Rehydration Salts,Gastrointestinal,Powder Sachet,21.8 g,Zenvia Pharmaceuticals,SUP006,12.0,13.68,High,812,174
+44,MED-GIT-008,Loperamide 2 mg Capsule,Loperamide,Gastrointestinal,Capsule,2 mg,Orion Healthcare Ltd,SUP011,9.0,11.5,Medium,240,69
+45,MED-GIT-009,Lactulose 10 g/15 ml Solution,Lactulose,Gastrointestinal,Solution,10 g/15 ml,Aarogya Formulations,SUP003,110.0,131.44,Low,13,6
+46,MED-CVS-001,Amlodipine 5 mg Tablet,Amlodipine,Cardiovascular,Tablet,5 mg,Bharat Medicare Ltd,SUP008,6.0,7.02,High,672,109
+47,MED-CVS-002,Atenolol 50 mg Tablet,Atenolol,Cardiovascular,Tablet,50 mg,Lifeline Pharma Works,SUP008,7.0,9.7,Medium,251,82
+48,MED-CVS-003,Losartan 50 mg Tablet,Losartan,Cardiovascular,Tablet,50 mg,Zenvia Pharmaceuticals,SUP007,12.0,16.67,High,317,38
+49,MED-CVS-004,Telmisartan 40 mg Tablet,Telmisartan,Cardiovascular,Tablet,40 mg,Bharat Medicare Ltd,SUP012,15.0,18.51,Medium,287,21
+50,MED-CVS-005,Metoprolol Succinate 50 mg Tablet,Metoprolol Succinate,Cardiovascular,Tablet,50 mg,Lifeline Pharma Works,SUP011,24.0,32.15,Medium,178,10
+51,MED-CVS-006,Atorvastatin 10 mg Tablet,Atorvastatin,Cardiovascular,Tablet,10 mg,Sunrise Pharmacare,SUP010,22.0,26.94,High,931,132
+52,MED-CVS-007,Rosuvastatin 10 mg Tablet,Rosuvastatin,Cardiovascular,Tablet,10 mg,Meridian Labs India,SUP009,34.0,45.61,Medium,279,85
+53,MED-CVS-008,Clopidogrel 75 mg Tablet,Clopidogrel,Cardiovascular,Tablet,75 mg,Sunrise Pharmacare,SUP007,26.0,32.51,Medium,128,33
+54,MED-CVS-009,Ramipril 5 mg Capsule,Ramipril,Cardiovascular,Capsule,5 mg,Astra Vitae Laboratories,SUP014,18.0,24.13,Low,109,43
+55,MED-CVS-010,Furosemide 40 mg Tablet,Furosemide,Cardiovascular,Tablet,40 mg,Aarogya Formulations,SUP012,5.0,6.49,Low,113,48
+56,MED-DIA-001,Metformin 500 mg Tablet,Metformin,Diabetes,Tablet,500 mg,Astra Vitae Laboratories,SUP006,5.0,5.95,High,537,141
+57,MED-DIA-002,Glimepiride 2 mg Tablet,Glimepiride,Diabetes,Tablet,2 mg,Bharat Medicare Ltd,SUP001,14.0,15.73,Medium,104,36
+58,MED-DIA-003,Gliclazide 80 mg Tablet,Gliclazide,Diabetes,Tablet,80 mg,Veda Biotech Pvt Ltd,SUP009,12.0,15.32,Medium,204,17
+59,MED-DIA-004,Sitagliptin 100 mg Tablet,Sitagliptin,Diabetes,Tablet,100 mg,Lifeline Pharma Works,SUP012,72.0,92.92,Low,110,47
+60,MED-DIA-005,Insulin Glargine 100 IU/ml Injection Pen,Insulin Glargine,Diabetes,Injection Pen,100 IU/ml,Bharat Medicare Ltd,SUP010,620.0,713.13,Low,73,33
+61,MED-DIA-006,Vildagliptin 50 mg Tablet,Vildagliptin,Diabetes,Tablet,50 mg,Kaveri Therapeutics,SUP014,58.0,67.63,Medium,478,86
+62,MED-DIA-007,Pioglitazone 15 mg Tablet,Pioglitazone,Diabetes,Tablet,15 mg,Aarogya Formulations,SUP014,16.0,21.51,Low,117,35
+63,MED-VIT-001,Cholecalciferol (Vitamin D3) 60000 IU Capsule,Cholecalciferol (Vitamin D3),Vitamins,Capsule,60000 IU,Prakash Generics Pvt Ltd,SUP005,48.0,60.66,High,273,15
+64,MED-VIT-002,Vitamin B-Complex Standard Tablet,Vitamin B-Complex,Vitamins,Tablet,Standard,Trishul Drugs & Chemicals,SUP010,12.0,14.78,High,1104,161
+65,MED-VIT-003,Ascorbic Acid (Vitamin C) 500 mg Chewable Tablet,Ascorbic Acid (Vitamin C),Vitamins,Chewable Tablet,500 mg,Astra Vitae Laboratories,SUP006,14.0,16.19,Medium,172,45
+66,MED-VIT-004,Calcium + Vitamin D3 500 mg/250 IU Tablet,Calcium + Vitamin D3,Vitamins,Tablet,500 mg/250 IU,Prakash Generics Pvt Ltd,SUP002,32.0,38.4,Medium,119,56
+67,MED-VIT-005,Zinc Sulphate 20 mg Dispersible Tablet,Zinc Sulphate,Vitamins,Dispersible Tablet,20 mg,Astra Vitae Laboratories,SUP007,10.0,13.33,Medium,118,29
+68,MED-VIT-006,Folic Acid 5 mg Tablet,Folic Acid,Vitamins,Tablet,5 mg,Kaveri Therapeutics,SUP014,3.0,3.43,Medium,308,61
+69,MED-VIT-007,Multivitamin + Multimineral Standard Capsule,Multivitamin + Multimineral,Vitamins,Capsule,Standard,Prakash Generics Pvt Ltd,SUP015,28.0,31.6,Medium,326,30
+70,MED-VIT-008,Ferrous Ascorbate 100 mg Tablet,Ferrous Ascorbate,Vitamins,Tablet,100 mg,Veda Biotech Pvt Ltd,SUP015,16.0,21.37,Medium,267,12
+71,MED-DRM-001,Clotrimazole 1% w/w 15 g Cream,Clotrimazole,Dermatological,Cream,1% w/w 15 g,Meridian Labs India,SUP008,42.0,52.8,Medium,213,65
+72,MED-DRM-002,Betamethasone 0.05% w/w 20 g Cream,Betamethasone,Dermatological,Cream,0.05% w/w 20 g,Astra Vitae Laboratories,SUP011,38.0,52.52,Medium,194,54
+73,MED-DRM-003,Mupirocin 2% w/w 5 g Ointment,Mupirocin,Dermatological,Ointment,2% w/w 5 g,Bharat Medicare Ltd,SUP004,88.0,98.69,Low,15,7
+74,MED-DRM-004,Fluconazole 150 mg Tablet,Fluconazole,Dermatological,Tablet,150 mg,Zenvia Pharmaceuticals,SUP010,24.0,29.42,Low,84,24
+75,MED-DRM-005,Terbinafine 1% w/w 10 g Cream,Terbinafine,Dermatological,Cream,1% w/w 10 g,Kaveri Therapeutics,SUP002,78.0,105.86,Medium,105,23
+76,MED-DRM-006,Calamine 100 ml Lotion,Calamine,Dermatological,Lotion,100 ml,Bharat Medicare Ltd,SUP013,62.0,82.91,Medium,539,35
+77,MED-DRM-007,Permethrin 5% w/w 30 g Cream,Permethrin,Dermatological,Cream,5% w/w 30 g,Orion Healthcare Ltd,SUP002,92.0,127.17,Low,30,18
+78,MED-OTH-001,Povidone-Iodine 5% w/v 100 ml Solution,Povidone-Iodine,Other,Solution,5% w/v 100 ml,Veda Biotech Pvt Ltd,SUP013,45.0,52.83,Medium,410,82
+79,MED-OTH-002,Sodium Chloride 0.65% w/v 10 ml Nasal Drops,Sodium Chloride,Other,Nasal Drops,0.65% w/v 10 ml,Aarogya Formulations,SUP012,38.0,44.05,Medium,324,93
+80,MED-OTH-003,Carboxymethylcellulose 0.5% w/v 10 ml Eye Drops,Carboxymethylcellulose,Other,Eye Drops,0.5% w/v 10 ml,Bharat Medicare Ltd,SUP009,58.0,65.69,Low,38,13
+81,MED-OTH-004,Melatonin 3 mg Tablet,Melatonin,Other,Tablet,3 mg,Astra Vitae Laboratories,SUP011,65.0,82.25,Low,57,17
+82,MED-OTH-005,Hyoscine Butylbromide 10 mg Tablet,Hyoscine Butylbromide,Other,Tablet,10 mg,Veda Biotech Pvt Ltd,SUP007,20.0,27.12,Medium,91,10
+83,MED-OTH-006,Chlorhexidine Gluconate 0.2% w/v 100 ml Mouthwash,Chlorhexidine Gluconate,Other,Mouthwash,0.2% w/v 100 ml,Kaveri Therapeutics,SUP015,52.0,60.43,Medium,227,37
+84,MED-OTH-007,Ispaghula Husk 100 g Powder,Ispaghula Husk,Other,Powder,100 g,Sunrise Pharmacare,SUP012,95.0,122.13,Medium,260,77
+85,MED-OTH-008,Tranexamic Acid 500 mg Tablet,Tranexamic Acid,Other,Tablet,500 mg,Meridian Labs India,SUP013,44.0,49.54,Low,76,21

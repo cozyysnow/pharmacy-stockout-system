@@ -1,0 +1,76 @@
+# Pharmacy Stock-Out Dataset — Data Dictionary
+
+| column_name | data_type | description | example | how_it_is_calculated | whether_it_is_an_ML_feature | whether_it_is_an_ML_target |
+| --- | --- | --- | --- | --- | --- | --- |
+| record_id | string | Unique row identifier | R0017180 | R + 7-digit running number (medicine-major, date ascending) | No | No |
+| date | date (YYYY-MM-DD) | Calendar date of the daily record | 2023-01-16 | Daily calendar 2021-01-01..2025-12-31 | No | No |
+| medicine_id | integer | Unique medicine key (FK to medicines_master) | 10 | Sequential 1..85 | Yes - forecasting (categorical) | No |
+| medicine_code | string | Unique medicine code | MED-APY-002 | MED-<category code>-<sequence> | No | No |
+| medicine_name | string | Display name | Paracetamol 650 mg Tablet | generic_name + strength + dosage_form | No | No |
+| generic_name | string | Generic (INN) name of the active ingredient | Paracetamol | Master data | No | No |
+| category | string | Therapeutic category (11 categories) | Antipyretics | Master data | Yes - forecasting (categorical) | No |
+| dosage_form | string | Tablet, capsule, syrup, cream ... | Tablet | Master data | No | No |
+| strength | string | Strength / pack size | 650 mg | Master data | No | No |
+| manufacturer | string | Synthetic manufacturer name | Sunrise Pharmacare | Master data | No | No |
+| demand_tier | string | High / Medium / Low demand class of the medicine | High | Master data (base daily demand band) | Optional | No |
+| supplier_id | string | Supplier key (FK to suppliers_master) | SUP003 | One fixed supplier per medicine | No | No |
+| supplier_name | string | Supplier name | Sarthak Healthcare Supplies | Lookup on supplier_id | No | No |
+| supplier_location | string | Supplier city / state | Faridabad, Haryana | Lookup on supplier_id | No | No |
+| unit_cost | float (INR) | Purchase cost per pack/unit | 12 | Master data (constant) | No | No |
+| selling_price | float (INR) | Retail price per pack/unit | 16.49 | unit_cost x margin 1.12-1.40 (constant) | No | No |
+| unit_price | float (INR) | Price charged on the day | 16.49 | = selling_price | No | No |
+| quantity_sold | integer | Units actually sold that day | 81 | min(demand_quantity, sellable stock) | No | No |
+| unmet_demand | integer | Units requested but unavailable (shortage) | 0 | demand_quantity - quantity_sold | No | No |
+| demand_quantity | integer | True demand of the day (sales + unserved requests) | 81 | quantity_sold + unmet_demand | Source series for lags/rolling | No |
+| total_sales | float (INR) | Revenue of the day | 1335.69 | quantity_sold x unit_price | No | No |
+| day_of_week | integer 0-6 | Day of week (0=Monday) | 0 | Calendar | Yes - forecasting | No |
+| day_of_month | integer | Day of month | 16 | Calendar | Optional | No |
+| week_of_year | integer | ISO week number | 3 | Calendar | Optional | No |
+| month | integer 1-12 | Month | 1 | Calendar | Yes - forecasting | No |
+| quarter | integer 1-4 | Quarter | 1 | Calendar | Yes - forecasting | No |
+| year | integer | Year | 2023 | Calendar | Optional | No |
+| is_weekend | 0/1 | 1 if Saturday or Sunday | 0 | day_of_week >= 5 | Yes - forecasting | No |
+| is_holiday | 0/1 | Festival / public holiday (footfall dip); known in advance | 0 | Fixed holiday calendar | Optional | No |
+| lag_1_day | integer | Demand 1 day earlier | 96 | demand_quantity(t-1) | Yes - forecasting | No |
+| lag_7_day | integer | Demand 7 days earlier | 92 | demand_quantity(t-7) | Yes - forecasting | No |
+| lag_14_day | integer | Demand 14 days earlier | 81 | demand_quantity(t-14) | Yes - forecasting | No |
+| lag_30_day | integer | Demand 30 days earlier | 130 | demand_quantity(t-30) | Yes - forecasting | No |
+| rolling_mean_7 | float | 7-day mean demand (previous 7 days, excludes today) | 98.2857 | mean(demand_quantity(t-7..t-1)) | Yes - both | No |
+| rolling_mean_14 | float | 14-day mean demand (previous days) | 97.0714 | mean(demand_quantity(t-14..t-1)) | Yes - forecasting | No |
+| rolling_mean_30 | float | 30-day mean demand (previous days) | 94.6 | mean(demand_quantity(t-30..t-1)) | Yes - forecasting | No |
+| rolling_std_7 | float | 7-day demand std-dev (previous days) | 16.4389 | std(demand_quantity(t-7..t-1)) | Yes - both | No |
+| rolling_std_30 | float | 30-day demand std-dev (previous days) | 18.0126 | std(demand_quantity(t-30..t-1)) | Yes - forecasting | No |
+| demand_trend | float | Relative recent momentum of demand | 0.039 | (rolling_mean_7 - rolling_mean_30) / max(rolling_mean_30, 0.5) | Yes - both | No |
+| recent_spike_count_30 | integer | Demand spikes in previous 30 days | 1 | days with demand > rolling_mean_30 + 2.5 x rolling_std_30 (stats from earlier days) and demand >= 3 | Optional - risk | No |
+| opening_stock | integer | On-hand stock at start of day | 371 | = closing_stock of previous day | Optional | No |
+| purchase_quantity | integer | Units received from the supplier that day | 0 | Orders placed earlier that arrive today (lead time + delays) | Optional | No |
+| return_quantity | integer | Customer returns restocked | 2 | Binomial(previous day sales, 0.4%) | Optional | No |
+| damaged_quantity | integer | Damaged units written off | 0 | Rare event, ~2% of stock | Optional | No |
+| expired_quantity | integer | Expired units written off | 0 | Mostly when stock far exceeds 60 days of demand | Optional | No |
+| adjustment_quantity | integer | Stock-count correction (+/-) | 0 | Rare, mostly negative (shrinkage) | Optional | No |
+| closing_stock | integer | On-hand stock at end of day (never negative) | 292 | opening + purchase + return + adjustment - quantity_sold - damaged - expired | Optional | No |
+| current_stock | integer | Stock on hand at prediction time (end of day) | 292 | = closing_stock | Yes - risk | No |
+| reserved_stock | integer | Units held for pending pre-bookings / counters | 11 | min(current_stock, Poisson(rolling_mean_7 x 5-35%)) | Optional | No |
+| available_stock | integer | Sellable stock | 281 | current_stock - reserved_stock | Yes - risk | No |
+| reorder_level | integer | Reorder point (static per medicine) | 390 | ceil(planning demand x lead time + safety_stock) | Yes - risk | No |
+| safety_stock | integer | Buffer stock (static per medicine) | 101 | ceil(z x demand std x sqrt(lead time)), z varies by medicine | Yes - risk | No |
+| on_order_quantity | integer | Ordered but not yet delivered (open purchase orders) | 1355 | Sum of open orders at end of day | Optional - risk | No |
+| supplier_lead_time_days | integer | Supplier normal lead time | 3 | suppliers_master.average_lead_time_days | Yes - risk | No |
+| expected_delivery_days | integer | Quoted delivery time of the latest received order | 3 | Supplier lead time (+1 for Saturday orders) | Optional | No |
+| actual_delivery_days | integer | Actual delivery time of the latest received order | 3 | Lead time + jitter + delay events (more delays for low reliability) | Optional | No |
+| supplier_reliability | float 0-1 | Supplier on-time reliability | 0.94 | suppliers_master.reliability_score | Yes - risk | No |
+| minimum_order_quantity | integer | Supplier MOQ | 15 | suppliers_master.minimum_order_quantity | Optional | No |
+| last_purchase_days_ago | integer | Days since the last delivery was received | 11 | t - day of last receipt (0 on delivery day) | Optional | No |
+| next_day_demand | integer | ACTUAL demand on t+1 | 77 | demand_quantity(t+1) | No (TARGET) | Yes |
+| forecast_7_day_demand | integer | ACTUAL total demand over t+1..t+7 | 592 | sum demand_quantity(t+1..t+7) | No (TARGET) | Yes |
+| predicted_daily_demand | float | Model-like baseline forecast of daily demand (info up to day t only) | 90.7 | (0.5xMA7 + 0.3xMA14 + 0.2xMA30) x weekday factor x seasonal factor x (1+0.25xtrend) x medicine bias x noise(9%); floor 0.05 | Yes - risk | No |
+| stock_coverage_days | float | Days the available stock will last | 3.1 | min(365, available_stock / predicted_daily_demand) | Yes - risk | No |
+| lead_time_demand | float | Expected demand during supplier lead time | 272.1 | predicted_daily_demand x supplier_lead_time_days | Optional | No |
+| required_stock | float | Stock needed to cover lead time safely | 373.1 | lead_time_demand + safety_stock | Optional | No |
+| stockout_event | 0/1 | 1 = shortage/stock-out occurred that day | 0 | 1 if unmet_demand > 0 | No (label / analysis) | Yes |
+| historical_stockout_frequency | float 0-1 | Share of stock-out days in previous 90 days | 0 | mean(stockout_event(t-90..t-1)) | Yes - risk | No |
+| stockout_risk | LOW/MEDIUM/HIGH | Stock-out risk class | LOW | risk_score < 25.54 LOW; < 49.77 MEDIUM; else HIGH | No (TARGET) | Yes |
+| risk_score | float 0-100 | Continuous risk score behind stockout_risk | 6.73 | Weighted shortfall vs required_stock, coverage vs lead time, variability, trend, lead time, reliability, spikes, past stock-outs, reorder level, open orders, + noise (+22 if stock-out occurred) | No (derived from target) | No |
+| recommended_order_quantity | integer | Suggested purchase quantity | 0 | If replenishment_required: ceil(max(0, required_stock - available_stock - on_order_quantity) / MOQ) x MOQ else 0 | No (output) | No |
+| replenishment_required | 0/1 | 1 = place a new order now | 0 | 1 if required_stock - available_stock - on_order_quantity >= 1 | No (output) | No |
+| recommendation_reason | string | Rule-based explanation of the recommendation | Open purchase order covers projected requirement | Priority rules: stock-out > below safety stock > rising trend > long lead time > below reorder level > below requirement > open PO / sufficient / overstock | No (output) | No |
